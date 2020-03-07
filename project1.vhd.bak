@@ -1,0 +1,12 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity project1 is 
+port(
+    test : out std_logic);
+end entity;
+
+architecture behavior of project1 is
+begin
+test <= 1;
+end behavior;

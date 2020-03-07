@@ -1,0 +1,79 @@
+|project1
+clk => clockDivider:clockDivide.CLK_50MHz
+adcOut << adcReader:adc.adcOut
+adcIn => adcReader:adc.adcIn
+adcCS << adcReader:adc.adcCS
+adcData[0] << adcReader:adc.adcData[0]
+adcData[1] << adcReader:adc.adcData[1]
+adcData[2] << adcReader:adc.adcData[2]
+adcData[3] << adcReader:adc.adcData[3]
+adcData[4] << adcReader:adc.adcData[4]
+adcData[5] << adcReader:adc.adcData[5]
+adcData[6] << adcReader:adc.adcData[6]
+adcData[7] << adcReader:adc.adcData[7]
+adcClk << clockDivider:clockDivide.clk
+rst => ~NO_FANOUT~
+
+
+|project1|clockDivider:clockDivide
+CLK_50MHz => CLK_50HZ.CLK
+CLK_50MHz => counter[0].CLK
+CLK_50MHz => counter[1].CLK
+CLK_50MHz => counter[2].CLK
+CLK_50MHz => counter[3].CLK
+CLK_50MHz => counter[4].CLK
+CLK_50MHz => counter[5].CLK
+CLK_50MHz => counter[6].CLK
+CLK_50MHz => counter[7].CLK
+CLK_50MHz => counter[8].CLK
+CLK_50MHz => counter[9].CLK
+CLK_50MHz => counter[10].CLK
+CLK_50MHz => counter[11].CLK
+CLK_50MHz => counter[12].CLK
+CLK_50MHz => counter[13].CLK
+CLK_50MHz => counter[14].CLK
+CLK_50MHz => counter[15].CLK
+CLK_50MHz => counter[16].CLK
+CLK_50MHz => counter[17].CLK
+CLK_50MHz => counter[18].CLK
+CLK_50MHz => counter[19].CLK
+CLK_50MHz => counter[20].CLK
+CLK_50MHz => counter[21].CLK
+CLK_50MHz => counter[22].CLK
+CLK_50MHz => counter[23].CLK
+CLK_50MHz => counter[24].CLK
+clk <= CLK_50HZ.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|project1|adcReader:adc
+clk => adcData[0]~reg0.CLK
+clk => adcData[1]~reg0.CLK
+clk => adcData[2]~reg0.CLK
+clk => adcData[3]~reg0.CLK
+clk => adcData[4]~reg0.CLK
+clk => adcData[5]~reg0.CLK
+clk => adcData[6]~reg0.CLK
+clk => adcData[7]~reg0.CLK
+clk => adcOut~reg0.CLK
+clk => adcCS~reg0.CLK
+clk => state~1.DATAIN
+adcOut <= adcOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+adcIn => adcData[7]~reg0.DATAIN
+adcIn => adcData[6]~reg0.DATAIN
+adcIn => adcData[5]~reg0.DATAIN
+adcIn => adcData[4]~reg0.DATAIN
+adcIn => adcData[3]~reg0.DATAIN
+adcIn => adcData[2]~reg0.DATAIN
+adcIn => adcData[1]~reg0.DATAIN
+adcIn => adcData[0]~reg0.DATAIN
+adcCS <= adcCS~reg0.DB_MAX_OUTPUT_PORT_TYPE
+adcData[0] <= adcData[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+adcData[1] <= adcData[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+adcData[2] <= adcData[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+adcData[3] <= adcData[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+adcData[4] <= adcData[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+adcData[5] <= adcData[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+adcData[6] <= adcData[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+adcData[7] <= adcData[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
