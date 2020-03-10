@@ -1,5 +1,5 @@
 Analysis & Synthesis report for project1
-Sat Feb 29 15:59:03 2020
+Tue Mar 10 15:19:25 2020
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -13,12 +13,16 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |project1|adcReader:adc|state
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. State Machine - |project1|eepromWrite:eeprom|state
+  9. State Machine - |project1|eepromWrite:eeprom|prevState
+ 10. State Machine - |project1|adcReader:adc|state
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -45,16 +49,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Feb 29 15:59:03 2020       ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 10 15:19:25 2020       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; project1                                    ;
 ; Top-level Entity Name              ; project1                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 61                                          ;
-;     Total combinational functions  ; 48                                          ;
-;     Dedicated logic registers      ; 51                                          ;
-; Total registers                    ; 51                                          ;
-; Total pins                         ; 14                                          ;
+; Total logic elements               ; 401                                         ;
+;     Total combinational functions  ; 387                                         ;
+;     Dedicated logic registers      ; 223                                         ;
+; Total registers                    ; 223                                         ;
+; Total pins                         ; 8                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -173,75 +177,126 @@ agreement for further details.
 ; project1.vhd                     ; yes             ; User VHDL File  ; C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd     ;         ;
 ; clockDivider.vhd                 ; yes             ; User VHDL File  ; C:/Users/idn09/Documents/ECE 387/Project 1/clockDivider.vhd ;         ;
 ; adcReader.vhd                    ; yes             ; User VHDL File  ; C:/Users/idn09/Documents/ECE 387/Project 1/adcReader.vhd    ;         ;
+; eepromWrite.vhd                  ; yes             ; User VHDL File  ; C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd  ;         ;
+; reg8by64.vhd                     ; yes             ; User VHDL File  ; C:/Users/idn09/Documents/ECE 387/Project 1/reg8by64.vhd     ;         ;
+; clockDivide4.vhd                 ; yes             ; User VHDL File  ; C:/Users/idn09/Documents/ECE 387/Project 1/clockDivide4.vhd ;         ;
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                     ;
-+---------------------------------------------+-----------------------------------+
-; Resource                                    ; Usage                             ;
-+---------------------------------------------+-----------------------------------+
-; Estimated Total logic elements              ; 61                                ;
-;                                             ;                                   ;
-; Total combinational functions               ; 48                                ;
-; Logic element usage by number of LUT inputs ;                                   ;
-;     -- 4 input functions                    ; 9                                 ;
-;     -- 3 input functions                    ; 12                                ;
-;     -- <=2 input functions                  ; 27                                ;
-;                                             ;                                   ;
-; Logic elements by mode                      ;                                   ;
-;     -- normal mode                          ; 24                                ;
-;     -- arithmetic mode                      ; 24                                ;
-;                                             ;                                   ;
-; Total registers                             ; 51                                ;
-;     -- Dedicated logic registers            ; 51                                ;
-;     -- I/O registers                        ; 0                                 ;
-;                                             ;                                   ;
-; I/O pins                                    ; 14                                ;
-;                                             ;                                   ;
-; Embedded Multiplier 9-bit elements          ; 0                                 ;
-;                                             ;                                   ;
-; Maximum fan-out node                        ; clockDivider:clockDivide|CLK_50HZ ;
-; Maximum fan-out                             ; 27                                ;
-; Total fan-out                               ; 275                               ;
-; Average fan-out                             ; 2.17                              ;
-+---------------------------------------------+-----------------------------------+
++-------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                               ;
++---------------------------------------------+---------------------------------------------+
+; Resource                                    ; Usage                                       ;
++---------------------------------------------+---------------------------------------------+
+; Estimated Total logic elements              ; 401                                         ;
+;                                             ;                                             ;
+; Total combinational functions               ; 387                                         ;
+; Logic element usage by number of LUT inputs ;                                             ;
+;     -- 4 input functions                    ; 80                                          ;
+;     -- 3 input functions                    ; 48                                          ;
+;     -- <=2 input functions                  ; 259                                         ;
+;                                             ;                                             ;
+; Logic elements by mode                      ;                                             ;
+;     -- normal mode                          ; 204                                         ;
+;     -- arithmetic mode                      ; 183                                         ;
+;                                             ;                                             ;
+; Total registers                             ; 223                                         ;
+;     -- Dedicated logic registers            ; 223                                         ;
+;     -- I/O registers                        ; 0                                           ;
+;                                             ;                                             ;
+; I/O pins                                    ; 8                                           ;
+;                                             ;                                             ;
+; Embedded Multiplier 9-bit elements          ; 0                                           ;
+;                                             ;                                             ;
+; Maximum fan-out node                        ; clockDivider500KHz:clockDivideFPGA|CLK_50HZ ;
+; Maximum fan-out                             ; 159                                         ;
+; Total fan-out                               ; 1530                                        ;
+; Average fan-out                             ; 2.44                                        ;
++---------------------------------------------+---------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                         ;
-+-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+--------------+
-; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name  ; Library Name ;
-+-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+--------------+
-; |project1                     ; 48 (0)              ; 51 (0)                    ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |project1                          ; project1     ; work         ;
-;    |adcReader:adc|            ; 13 (13)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|adcReader:adc            ; adcReader    ; work         ;
-;    |clockDivider:clockDivide| ; 35 (35)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|clockDivider:clockDivide ; clockDivider ; work         ;
-+-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
++-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Entity Name        ; Library Name ;
++-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------------+--------------+
+; |project1                               ; 387 (0)             ; 223 (0)                   ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |project1                                    ; project1           ; work         ;
+;    |adcReader:adc|                      ; 47 (47)             ; 49 (49)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|adcReader:adc                      ; adcReader          ; work         ;
+;    |clockDivide4:clockDivideEEPROM|     ; 74 (74)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|clockDivide4:clockDivideEEPROM     ; clockDivide4       ; work         ;
+;    |clockDivider500KHz:clockDivideFPGA| ; 75 (75)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|clockDivider500KHz:clockDivideFPGA ; clockDivider500KHz ; work         ;
+;    |eepromWrite:eeprom|                 ; 191 (191)           ; 108 (108)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|eepromWrite:eeprom                 ; eepromWrite        ; work         ;
++-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |project1|adcReader:adc|state                                                                                                                                                                     ;
-+---------------+-------------+------------+------------+------------+------------+------------+------------+------------+------------+---------------+------------+-----------+-----------+-------------+----------+
-; Name          ; state.reset ; state.bit0 ; state.bit1 ; state.bit2 ; state.bit3 ; state.bit4 ; state.bit5 ; state.bit6 ; state.bit7 ; state.nullbit ; state.msbf ; state.odd ; state.sgl ; state.start ; state.cs ;
-+---------------+-------------+------------+------------+------------+------------+------------+------------+------------+------------+---------------+------------+-----------+-----------+-------------+----------+
-; state.cs      ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 0        ;
-; state.start   ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 1           ; 1        ;
-; state.sgl     ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 1         ; 0           ; 1        ;
-; state.odd     ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 1         ; 0         ; 0           ; 1        ;
-; state.msbf    ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 1          ; 0         ; 0         ; 0           ; 1        ;
-; state.nullbit ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1             ; 0          ; 0         ; 0         ; 0           ; 1        ;
-; state.bit7    ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
-; state.bit6    ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
-; state.bit5    ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
-; state.bit4    ; 0           ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
-; state.bit3    ; 0           ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
-; state.bit2    ; 0           ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
-; state.bit1    ; 0           ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
-; state.bit0    ; 0           ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
-; state.reset   ; 1           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
-+---------------+-------------+------------+------------+------------+------------+------------+------------+------------+------------+---------------+------------+-----------+-----------+-------------+----------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |project1|eepromWrite:eeprom|state                                                                                   ;
++-------------------+------------+------------+------------------+-------------------+-------------------+---------------+-------------+
+; Name              ; state.stop ; state.data ; state.addressLow ; state.addressHigh ; state.acknowledge ; state.control ; state.start ;
++-------------------+------------+------------+------------------+-------------------+-------------------+---------------+-------------+
+; state.start       ; 0          ; 0          ; 0                ; 0                 ; 0                 ; 0             ; 0           ;
+; state.control     ; 0          ; 0          ; 0                ; 0                 ; 0                 ; 1             ; 1           ;
+; state.acknowledge ; 0          ; 0          ; 0                ; 0                 ; 1                 ; 0             ; 1           ;
+; state.addressHigh ; 0          ; 0          ; 0                ; 1                 ; 0                 ; 0             ; 1           ;
+; state.addressLow  ; 0          ; 0          ; 1                ; 0                 ; 0                 ; 0             ; 1           ;
+; state.data        ; 0          ; 1          ; 0                ; 0                 ; 0                 ; 0             ; 1           ;
+; state.stop        ; 1          ; 0          ; 0                ; 0                 ; 0                 ; 0             ; 1           ;
++-------------------+------------+------------+------------------+-------------------+-------------------+---------------+-------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |project1|eepromWrite:eeprom|prevState                                                                                                               ;
++-----------------------+----------------+----------------+----------------------+-----------------------+-----------------------+-------------------+-----------------+
+; Name                  ; prevState.stop ; prevState.data ; prevState.addressLow ; prevState.addressHigh ; prevState.acknowledge ; prevState.control ; prevState.start ;
++-----------------------+----------------+----------------+----------------------+-----------------------+-----------------------+-------------------+-----------------+
+; prevState.start       ; 0              ; 0              ; 0                    ; 0                     ; 0                     ; 0                 ; 0               ;
+; prevState.control     ; 0              ; 0              ; 0                    ; 0                     ; 0                     ; 1                 ; 1               ;
+; prevState.acknowledge ; 0              ; 0              ; 0                    ; 0                     ; 1                     ; 0                 ; 1               ;
+; prevState.addressHigh ; 0              ; 0              ; 0                    ; 1                     ; 0                     ; 0                 ; 1               ;
+; prevState.addressLow  ; 0              ; 0              ; 1                    ; 0                     ; 0                     ; 0                 ; 1               ;
+; prevState.data        ; 0              ; 1              ; 0                    ; 0                     ; 0                     ; 0                 ; 1               ;
+; prevState.stop        ; 1              ; 0              ; 0                    ; 0                     ; 0                     ; 0                 ; 1               ;
++-----------------------+----------------+----------------+----------------------+-----------------------+-----------------------+-------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |project1|adcReader:adc|state                                                                                                                                                                                  ;
++---------------+------------+-------------+------------+------------+------------+------------+------------+------------+------------+------------+---------------+------------+-----------+-----------+-------------+----------+
+; Name          ; state.stop ; state.reset ; state.bit0 ; state.bit1 ; state.bit2 ; state.bit3 ; state.bit4 ; state.bit5 ; state.bit6 ; state.bit7 ; state.nullbit ; state.msbf ; state.odd ; state.sgl ; state.start ; state.cs ;
++---------------+------------+-------------+------------+------------+------------+------------+------------+------------+------------+------------+---------------+------------+-----------+-----------+-------------+----------+
+; state.cs      ; 0          ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 0        ;
+; state.start   ; 0          ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 1           ; 1        ;
+; state.sgl     ; 0          ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 1         ; 0           ; 1        ;
+; state.odd     ; 0          ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 1         ; 0         ; 0           ; 1        ;
+; state.msbf    ; 0          ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 1          ; 0         ; 0         ; 0           ; 1        ;
+; state.nullbit ; 0          ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1             ; 0          ; 0         ; 0         ; 0           ; 1        ;
+; state.bit7    ; 0          ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
+; state.bit6    ; 0          ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
+; state.bit5    ; 0          ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
+; state.bit4    ; 0          ; 0           ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
+; state.bit3    ; 0          ; 0           ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
+; state.bit2    ; 0          ; 0           ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
+; state.bit1    ; 0          ; 0           ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
+; state.bit0    ; 0          ; 0           ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
+; state.reset   ; 0          ; 1           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
+; state.stop    ; 1          ; 0           ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0             ; 0          ; 0         ; 0         ; 0           ; 1        ;
++---------------+------------+-------------+------------+------------+------------+------------+------------+------------+------------+------------+---------------+------------+-----------+-----------+-------------+----------+
+
+
++---------------------------------------------------------------+
+; Registers Removed During Synthesis                            ;
++------------------------------------------+--------------------+
+; Register name                            ; Reason for Removal ;
++------------------------------------------+--------------------+
+; eepromWrite:eeprom|prevState.start       ; Lost fanout        ;
+; eepromWrite:eeprom|prevState.acknowledge ; Lost fanout        ;
+; eepromWrite:eeprom|prevState.stop        ; Lost fanout        ;
+; adcReader:adc|state.stop                 ; Lost fanout        ;
+; Total Number of Removed Registers = 4    ;                    ;
++------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -249,24 +304,44 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 51    ;
-; Number of registers using Synchronous Clear  ; 25    ;
+; Total registers                              ; 223   ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 101   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; adcReader:adc|adcOut                   ; 2       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
++----------------------------------------------------------+
+; Inverted Register Statistics                             ;
++------------------------------------------------+---------+
+; Inverted Register                              ; Fan out ;
++------------------------------------------------+---------+
+; adcReader:adc|adcOut                           ; 2       ;
+; eepromWrite:eeprom|dataOut                     ; 3       ;
+; clockDivider500KHz:clockDivideFPGA|counter[31] ; 2       ;
+; clockDivide4:clockDivideEEPROM|counter[31]     ; 34      ;
+; eepromWrite:eeprom|bitNum[2]                   ; 3       ;
+; eepromWrite:eeprom|bitNum[0]                   ; 3       ;
+; clockDivider500KHz:clockDivideFPGA|counter[0]  ; 1       ;
+; clockDivide4:clockDivideEEPROM|counter[0]      ; 1       ;
+; eepromWrite:eeprom|bitNum[1]                   ; 2       ;
+; Total number of inverted registers = 9         ;         ;
++------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |project1|eepromWrite:eeprom|bitNum[12] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |project1|eepromWrite:eeprom|bitNum[2]  ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; No         ; |project1|eepromWrite:eeprom|prevState  ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |project1|eepromWrite:eeprom|state      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -274,20 +349,22 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 14                          ;
-; cycloneiii_ff         ; 51                          ;
-;     SCLR              ; 25                          ;
-;     plain             ; 26                          ;
-; cycloneiii_lcell_comb ; 49                          ;
-;     arith             ; 24                          ;
-;         2 data inputs ; 24                          ;
-;     normal            ; 25                          ;
-;         1 data inputs ; 4                           ;
-;         3 data inputs ; 12                          ;
-;         4 data inputs ; 9                           ;
+; boundary_port         ; 8                           ;
+; cycloneiii_ff         ; 223                         ;
+;     ENA               ; 101                         ;
+;     plain             ; 122                         ;
+; cycloneiii_lcell_comb ; 389                         ;
+;     arith             ; 183                         ;
+;         2 data inputs ; 180                         ;
+;         3 data inputs ; 3                           ;
+;     normal            ; 206                         ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 68                          ;
+;         3 data inputs ; 45                          ;
+;         4 data inputs ; 80                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.40                        ;
-; Average LUT depth     ; 2.29                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.93                        ;
 +-----------------------+-----------------------------+
 
 
@@ -306,35 +383,54 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Sat Feb 29 15:58:55 2020
+    Info: Processing started: Tue Mar 10 15:19:15 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project1 -c project1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Warning (12019): Can't analyze file -- file reg32by32.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file project1.vhd
-    Info (12022): Found design unit 1: project1-behavior File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 16
+    Info (12022): Found design unit 1: project1-behavior File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 17
     Info (12023): Found entity 1: project1 File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file clockdivider.vhd
-    Info (12022): Found design unit 1: clockDivider-Behavior File: C:/Users/idn09/Documents/ECE 387/Project 1/clockDivider.vhd Line: 12
-    Info (12023): Found entity 1: clockDivider File: C:/Users/idn09/Documents/ECE 387/Project 1/clockDivider.vhd Line: 6
+    Info (12022): Found design unit 1: clockDivider500KHz-Behavior File: C:/Users/idn09/Documents/ECE 387/Project 1/clockDivider.vhd Line: 11
+    Info (12023): Found entity 1: clockDivider500KHz File: C:/Users/idn09/Documents/ECE 387/Project 1/clockDivider.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file adcreader.vhd
-    Info (12022): Found design unit 1: adcReader-RTL File: C:/Users/idn09/Documents/ECE 387/Project 1/adcReader.vhd Line: 15
+    Info (12022): Found design unit 1: adcReader-RTL File: C:/Users/idn09/Documents/ECE 387/Project 1/adcReader.vhd Line: 18
     Info (12023): Found entity 1: adcReader File: C:/Users/idn09/Documents/ECE 387/Project 1/adcReader.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file eepromwrite.vhd
+    Info (12022): Found design unit 1: eepromWrite-RTL File: C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd Line: 16
+    Info (12023): Found entity 1: eepromWrite File: C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file reg8by64.vhd
+    Info (12022): Found design unit 1: reg8by64-behavior File: C:/Users/idn09/Documents/ECE 387/Project 1/reg8by64.vhd Line: 15
+    Info (12023): Found entity 1: reg8by64 File: C:/Users/idn09/Documents/ECE 387/Project 1/reg8by64.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file clockdivide4.vhd
+    Info (12022): Found design unit 1: clockDivide4-Behavior File: C:/Users/idn09/Documents/ECE 387/Project 1/clockDivide4.vhd Line: 11
+    Info (12023): Found entity 1: clockDivide4 File: C:/Users/idn09/Documents/ECE 387/Project 1/clockDivide4.vhd Line: 5
 Info (12127): Elaborating entity "project1" for the top level hierarchy
-Info (12128): Elaborating entity "clockDivider" for hierarchy "clockDivider:clockDivide" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 36
-Info (12128): Elaborating entity "adcReader" for hierarchy "adcReader:adc" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 37
+Info (12128): Elaborating entity "clockDivider500KHz" for hierarchy "clockDivider500KHz:clockDivideFPGA" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 74
+Info (12128): Elaborating entity "clockDivide4" for hierarchy "clockDivide4:clockDivideEEPROM" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 80
+Info (12128): Elaborating entity "adcReader" for hierarchy "adcReader:adc" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 85
+Info (12128): Elaborating entity "reg8by64" for hierarchy "reg8by64:regFile" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 97
+Info (12128): Elaborating entity "eepromWrite" for hierarchy "eepromWrite:eeprom" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 107
+Warning (10542): VHDL Variable Declaration warning at eepromWrite.vhd(27): used initial value expression for variable "controlByte" because variable was never assigned a value File: C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd Line: 27
+Warning (10542): VHDL Variable Declaration warning at eepromWrite.vhd(28): used initial value expression for variable "addressHighByte" because variable was never assigned a value File: C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd Line: 28
+Warning (10542): VHDL Variable Declaration warning at eepromWrite.vhd(29): used initial value expression for variable "addressLowByte" because variable was never assigned a value File: C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd Line: 29
+Warning (10542): VHDL Variable Declaration warning at eepromWrite.vhd(30): used initial value expression for variable "dataByteTest" because variable was never assigned a value File: C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd Line: 30
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "rst" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 12
-Info (21057): Implemented 75 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "adcIn" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 8
+    Warning (15610): No output dependent on input pin "rst" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 13
+Info (21057): Implemented 409 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 61 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Sat Feb 29 15:59:03 2020
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:18
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 401 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4826 megabytes
+    Info: Processing ended: Tue Mar 10 15:19:25 2020
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:19
 
 

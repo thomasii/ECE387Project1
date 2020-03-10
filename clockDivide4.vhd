@@ -2,13 +2,13 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use ieee.numeric_std.all;
 
-entity clockDivider500KHz is
+entity clockDivide4 is
 	port(
 		CLK_50MHz : in  std_logic;
 		clk       : out std_logic);
-end clockDivider500KHz;
+end clockDivide4;
 
-architecture Behavior of clockDivider500KHz is
+architecture Behavior of clockDivide4 is
 	signal counter  : integer;
 	signal CLK_50HZ : std_logic;
 
@@ -16,7 +16,7 @@ begin
 	Prescaler : process(CLK_50MHz)
 	begin
 		if rising_edge(CLK_50MHz) then
-			if counter < 50 then
+			if counter < 200 then
 				counter <= counter + 1;
 			else
 				CLK_50HZ <= not CLK_50HZ;

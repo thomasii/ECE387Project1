@@ -12,43 +12,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "adcData[0]",
-					"strict" : false
-				},
-				{
-					"name" : "adcData[1]",
-					"strict" : false
-				},
-				{
-					"name" : "adcData[2]",
-					"strict" : false
-				},
-				{
-					"name" : "adcData[3]",
-					"strict" : false
-				},
-				{
-					"name" : "adcData[4]",
-					"strict" : false
-				},
-				{
-					"name" : "adcData[5]",
-					"strict" : false
-				},
-				{
-					"name" : "adcData[6]",
-					"strict" : false
-				},
-				{
-					"name" : "adcData[7]",
-					"strict" : false
-				},
-				{
 					"name" : "adcClk",
 					"strict" : false
 				},
 				{
-					"name" : "adcIn",
+					"name" : "eepromClk",
+					"strict" : false
+				},
+				{
+					"name" : "eepromOut",
 					"strict" : false
 				},
 				{
