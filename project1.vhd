@@ -47,7 +47,7 @@ architecture behavior of project1 is
 			en      : in  std_logic;
 			dataOut : out std_logic;
 			dataIn  : in  std_logic_vector(7 downto 0);
-			scl     : in  std_logic;
+			scl     : out std_logic;
 			addr    : out integer
 		);
 	end component eepromWrite;
@@ -63,8 +63,7 @@ architecture behavior of project1 is
 	end component reg8by64;
 
 	signal fpgaClk  : std_logic;
-	signal sclClk   : std_logic;
-	signal eepromEn : std_logic;
+	signal eepromEn : std_logic := '1';
 	signal regWen   : std_logic;
 	signal addrD    : integer;
 	signal addrA    : integer;
@@ -77,11 +76,12 @@ begin
 			clk       => fpgaClk
 		);
 
-	clockDivideEEPROM : clockDivide4
-		port map(
-			CLK_50MHz => clk,
-			clk       => sclClk
-		);
+	--clockDivideEEPROM : clockDivide4
+	--port map(
+	--CLK_50MHz => clk,
+	--clk       => sclClk
+	--	);
+
 	adc : adcReader
 		port map(
 			clk      => fpgaClk,
@@ -110,9 +110,8 @@ begin
 			en      => eepromEn,
 			dataOut => eepromOut,
 			dataIn  => dataA,
-			addr    => addrA,
-			scl     => sclClk
+			scl     => eepromClk,
+			addr    => addrA
 		);
-	adcClk    <= fpgaClk;
-	eepromClk <= sclClk;
+	adcClk <= fpgaClk;
 end behavior;

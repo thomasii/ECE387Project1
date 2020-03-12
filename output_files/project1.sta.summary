@@ -2,76 +2,64 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -5.087
-TNS   : -201.762
-
-Type  : Slow 1200mV 85C Model Setup 'clockDivider500KHz:clockDivideFPGA|CLK_50HZ'
-Slack : -4.251
-TNS   : -421.309
-
-Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.386
+Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
+Slack : 43.487
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'clockDivider500KHz:clockDivideFPGA|CLK_50HZ'
-Slack : 0.387
+Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.403
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
-Slack : -3.000
-TNS   : -87.810
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clockDivider500KHz:clockDivideFPGA|CLK_50HZ'
-Slack : -1.285
-TNS   : -201.745
-
-Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -4.636
-TNS   : -179.097
-
-Type  : Slow 1200mV 0C Model Setup 'clockDivider500KHz:clockDivideFPGA|CLK_50HZ'
-Slack : -3.788
-TNS   : -369.243
-
-Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.339
+Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
+Slack : 96.979
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'clockDivider500KHz:clockDivideFPGA|CLK_50HZ'
-Slack : 0.339
+Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
+Slack : 1.172
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
-Slack : -3.000
-TNS   : -87.810
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clockDivider500KHz:clockDivideFPGA|CLK_50HZ'
-Slack : -1.285
-TNS   : -201.745
-
-Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -2.106
-TNS   : -65.605
-
-Type  : Fast 1200mV 0C Model Setup 'clockDivider500KHz:clockDivideFPGA|CLK_50HZ'
-Slack : -1.530
-TNS   : -132.887
-
-Type  : Fast 1200mV 0C Model Hold 'clockDivider500KHz:clockDivideFPGA|CLK_50HZ'
-Slack : 0.173
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.567
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.174
+Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 44.137
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
-Slack : -3.000
-TNS   : -73.034
+Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.355
+TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clockDivider500KHz:clockDivideFPGA|CLK_50HZ'
-Slack : -1.000
-TNS   : -157.000
+Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 97.224
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 1.073
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.490
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 46.936
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 98.396
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.558
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.460
+TNS   : 0.000
 
 ------------------------------------------------------------

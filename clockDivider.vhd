@@ -13,17 +13,17 @@ architecture Behavior of clockDivider500KHz is
 	signal CLK_50HZ : std_logic;
 
 begin
-	Prescaler : process(CLK_50MHz)
+	process(CLK_50MHz)
 	begin
 		if rising_edge(CLK_50MHz) then
-			if counter < 50 then
+			if counter < 500 then
 				counter <= counter + 1;
 			else
 				CLK_50HZ <= not CLK_50HZ;
 				counter  <= 0;
 			end if;
 		end if;
-	end process Prescaler;
+	end process;
 
 	clk <= CLK_50HZ;
 end Behavior;
