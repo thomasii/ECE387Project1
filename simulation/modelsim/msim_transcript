@@ -1,0 +1,192 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do project1_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -2008 -work work {C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity project1
+# -- Compiling architecture behavior of project1
+# vcom -2008 -work work {C:/Users/idn09/Documents/ECE 387/Project 1/clockDivider.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clockDivider500KHz
+# -- Compiling architecture Behavior of clockDivider500KHz
+# vcom -2008 -work work {C:/Users/idn09/Documents/ECE 387/Project 1/adcReader.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity adcReader
+# -- Compiling architecture RTL of adcReader
+# vcom -2008 -work work {C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity eepromWrite
+# -- Compiling architecture RTL of eepromWrite
+# vcom -2008 -work work {C:/Users/idn09/Documents/ECE 387/Project 1/reg8by64.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity reg8by64
+# -- Compiling architecture behavior of reg8by64
+# 
+vsim -do project1_run_msim_rtl_vhdl.do -l msim_transcript -gui work.project1(behavior)
+# vsim -do project1_run_msim_rtl_vhdl.do -l msim_transcript -gui work.project1(behavior) 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.project1(behavior)
+# Loading ieee.numeric_std(body)
+# Loading work.clockdivider500khz(behavior)
+# Loading work.adcreader(rtl)
+# Loading work.reg8by64(behavior)
+# Loading work.eepromwrite(rtl)
+# do project1_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vcom -2008 -work work {C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity project1
+# -- Compiling architecture behavior of project1
+# vcom -2008 -work work {C:/Users/idn09/Documents/ECE 387/Project 1/clockDivider.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clockDivider500KHz
+# -- Compiling architecture Behavior of clockDivider500KHz
+# vcom -2008 -work work {C:/Users/idn09/Documents/ECE 387/Project 1/adcReader.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity adcReader
+# -- Compiling architecture RTL of adcReader
+# vcom -2008 -work work {C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity eepromWrite
+# -- Compiling architecture RTL of eepromWrite
+# vcom -2008 -work work {C:/Users/idn09/Documents/ECE 387/Project 1/reg8by64.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity reg8by64
+# -- Compiling architecture behavior of reg8by64
+# 
+add wave -position insertpoint sim:/project1/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run

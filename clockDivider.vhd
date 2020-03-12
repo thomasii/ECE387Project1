@@ -16,7 +16,7 @@ begin
 	process(CLK_50MHz)
 	begin
 		if rising_edge(CLK_50MHz) then
-			if counter < 500 then
+			if counter < 25000 then
 				counter <= counter + 1;
 			else
 				CLK_50HZ <= not CLK_50HZ;

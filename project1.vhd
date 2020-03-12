@@ -41,7 +41,7 @@ architecture behavior of project1 is
 		);
 	end component adcReader;
 
-	component eepromWrite
+	component EEPROMWRITE
 		port(
 			clk     : in  std_logic;
 			en      : in  std_logic;
@@ -50,7 +50,7 @@ architecture behavior of project1 is
 			scl     : out std_logic;
 			addr    : out integer
 		);
-	end component eepromWrite;
+	end component EEPROMWRITE;
 
 	component reg8by64 is
 		Port(clk   : in  std_logic;
@@ -104,7 +104,7 @@ begin
 			dataA => dataA
 		);
 
-	eeprom : eepromWrite
+	eeprom : EEPROMWRITE
 		port map(
 			clk     => fpgaClk,
 			en      => eepromEn,

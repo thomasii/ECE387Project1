@@ -6,7 +6,7 @@ entity eepromWrite is
 	port(
 		clk     : in  std_logic;
 		en      : in  std_logic;
-		dataOut : out std_logic := '1';
+		dataOut : out std_logic;
 		dataIn  : in  std_logic_vector(7 downto 0);
 		scl     : out std_logic;
 		addr    : out integer
@@ -15,8 +15,9 @@ end entity eepromWrite;
 
 architecture RTL of eepromWrite is
 	type state_type is (start, control, acknowledge, addressHigh, addressLow, data, stop);
-	signal byteNum : integer := 0;
-	signal counter : integer := 0;
+	signal byteNum : integer   := 0;
+	signal counter : integer   := 0;
+	signal sda     : std_logic := '1';
 	--signal enEEPROM : std_logic := '0';
 begin
 
@@ -30,26 +31,75 @@ begin
 		constant dataByteTest    : std_logic_vector(7 downto 0) := "00000000";
 
 	begin
-		if rising_edge(clk) and en = '1' then
+		if rising_edge(clk) then
 			case counter is
 				when 0 =>
 					scl     <= '1';
-					dataOut <= dataOut;
+					sda     <= sda;
 					counter <= counter + 1;
 				when 1 =>
 					scl     <= '1';
 					counter <= counter + 1;
 					case state is
 						when start =>
-							dataOut   <= '0';
+							sda       <= '0';
 							prevState := start;
 							state     := control;
 						when stop =>    -- @suppress "Dead state "stop": state does not have outgoing transitions"
-							dataOut   <= '1';
+							sda       <= '1';
 							state     := stop;
 							prevState := stop;
+
+						when others =>
+							state := state;
+							sda   <= sda;
+					end case;
+				when 2 =>
+					sda     <= sda;
+					scl     <= '0';
+					counter <= counter + 1;
+				when 3 =>
+					scl     <= '0';
+					counter <= 0;
+					case state is
+						when control =>
+							sda <= controlByte(bitNum); -- this
+							if (bitNum - 1) >= 0 then
+								bitNum := bitNum - 1;
+							else
+								prevState := control;
+								state     := acknowledge;
+								bitNum    := 7;
+							end if;
+						when addressHigh =>
+							sda <= addressHighByte(bitNum);
+							if (bitNum - 1) >= 0 then
+								bitNum := bitNum - 1;
+							else
+								prevState := addressHigh;
+								state     := acknowledge;
+								bitNum    := 7;
+							end if;
+						when addressLow =>
+							sda <= addressLowByte(bitNum);
+							if (bitNum - 1) >= 0 then
+								bitNum := bitNum - 1;
+							else
+								prevState := addressLow;
+								state     := acknowledge;
+								bitNum    := 7;
+							end if;
+						when data =>
+							sda <= dataByteTest(bitNum);
+							if (bitNum - 1) >= 0 then
+								bitNum := bitNum - 1;
+							else
+								prevState := data;
+								state     := acknowledge;
+								bitNum    := 7;
+							end if;
 						when acknowledge =>
-							dataOut <= '0';
+							sda <= '0';
 							case prevState is
 								when control =>
 									state := addressHigh;
@@ -67,62 +117,14 @@ begin
 								when others => state := state;
 							end case;
 						when others =>
-							state   := state;
-							dataOut <= dataOut;
-					end case;
-				when 2 =>
-					dataOut <= dataOut;
-					scl     <= '0';
-					counter <= counter + 1;
-				when 3 =>
-					scl     <= '0';
-					counter <= 0;
-					case state is
-						when control =>
-							dataOut <= controlByte(bitNum); -- this
-							if (bitNum - 1) >= 0 then
-								bitNum := bitNum - 1;
-							else
-								prevState := control;
-								state     := acknowledge;
-								bitNum    := 7;
-							end if;
-						when addressHigh =>
-							dataOut <= addressHighByte(bitNum);
-							if (bitNum - 1) >= 0 then
-								bitNum := bitNum - 1;
-							else
-								prevState := addressHigh;
-								state     := acknowledge;
-								bitNum    := 7;
-							end if;
-						when addressLow =>
-							dataOut <= addressLowByte(bitNum);
-							if (bitNum - 1) >= 0 then
-								bitNum := bitNum - 1;
-							else
-								prevState := addressLow;
-								state     := acknowledge;
-								bitNum    := 7;
-							end if;
-						when data =>
-							dataOut <= dataByteTest(bitNum);
-							if (bitNum - 1) >= 0 then
-								bitNum := bitNum - 1;
-							else
-								prevState := data;
-								state     := acknowledge;
-								bitNum    := 7;
-							end if;
-
-						when others =>
-							state   := state;
-							dataOut <= dataOut;
+							state := state;
+							sda   <= sda;
 					end case;
 				when others => state := state; -- @suppress "Dead state "stop": state does not have outgoing transitions"
 			end case;
 		end if;
 	end process;
-	addr <= byteNum;
+	addr    <= byteNum;
+	dataOut <= sda;
 
 end architecture RTL;

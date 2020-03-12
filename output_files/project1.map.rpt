@@ -1,5 +1,5 @@
 Analysis & Synthesis report for project1
-Thu Mar 12 15:54:41 2020
+Thu Mar 12 16:38:24 2020
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -19,17 +19,16 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
  11. State Machine - |project1|eepromWrite:eeprom|prevState
  12. State Machine - |project1|adcReader:adc|state
  13. Registers Removed During Synthesis
- 14. Removed Registers Triggering Further Register Optimizations
- 15. General Register Statistics
- 16. Inverted Register Statistics
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Source assignments for sld_signaltap:auto_signaltap_0
- 19. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 20. SignalTap II Logic Analyzer Settings
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Connections to In-System Debugging Instance "auto_signaltap_0"
- 24. Analysis & Synthesis Messages
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for sld_signaltap:auto_signaltap_0
+ 18. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 19. SignalTap II Logic Analyzer Settings
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -56,13 +55,13 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 12 15:54:41 2020       ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 12 16:38:24 2020       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; project1                                    ;
 ; Top-level Entity Name              ; project1                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 868                                         ;
-;     Total combinational functions  ; 699                                         ;
+; Total logic elements               ; 870                                         ;
+;     Total combinational functions  ; 701                                         ;
 ;     Dedicated logic registers      ; 570                                         ;
 ; Total registers                    ; 570                                         ;
 ; Total pins                         ; 8                                           ;
@@ -182,11 +181,11 @@ agreement for further details.
 +--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------+
 ; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                  ; Library     ;
 +--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------+
+; reg8by64.vhd                                                       ; yes             ; User VHDL File                               ; C:/Users/idn09/Documents/ECE 387/Project 1/reg8by64.vhd                                                       ;             ;
 ; project1.vhd                                                       ; yes             ; User VHDL File                               ; C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd                                                       ;             ;
+; eepromWrite.vhd                                                    ; yes             ; User VHDL File                               ; C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd                                                    ;             ;
 ; clockDivider.vhd                                                   ; yes             ; User VHDL File                               ; C:/Users/idn09/Documents/ECE 387/Project 1/clockDivider.vhd                                                   ;             ;
 ; adcReader.vhd                                                      ; yes             ; User VHDL File                               ; C:/Users/idn09/Documents/ECE 387/Project 1/adcReader.vhd                                                      ;             ;
-; eepromWrite.vhd                                                    ; yes             ; User VHDL File                               ; C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd                                                    ;             ;
-; reg8by64.vhd                                                       ; yes             ; User VHDL File                               ; C:/Users/idn09/Documents/ECE 387/Project 1/reg8by64.vhd                                                       ;             ;
 ; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/sld_signaltap.vhd                                      ;             ;
 ; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                                 ;             ;
 ; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/sld_ela_control.vhd                                    ;             ;
@@ -250,16 +249,16 @@ agreement for further details.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 868                      ;
+; Estimated Total logic elements              ; 870                      ;
 ;                                             ;                          ;
-; Total combinational functions               ; 699                      ;
+; Total combinational functions               ; 701                      ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 242                      ;
+;     -- 4 input functions                    ; 244                      ;
 ;     -- 3 input functions                    ; 163                      ;
 ;     -- <=2 input functions                  ; 294                      ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 506                      ;
+;     -- normal mode                          ; 508                      ;
 ;     -- arithmetic mode                      ; 193                      ;
 ;                                             ;                          ;
 ; Total registers                             ; 570                      ;
@@ -273,7 +272,7 @@ agreement for further details.
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 304                      ;
-; Total fan-out                               ; 3909                     ;
+; Total fan-out                               ; 3916                     ;
 ; Average fan-out                             ; 3.01                     ;
 +---------------------------------------------+--------------------------+
 
@@ -283,10 +282,10 @@ agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                  ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |project1                                                                                                                               ; 699 (0)             ; 570 (0)                   ; 512         ; 0            ; 0       ; 0         ; 8    ; 0            ; |project1                                                                                                                                                                                                                                                                                                                                            ; project1                          ; work         ;
+; |project1                                                                                                                               ; 701 (1)             ; 570 (0)                   ; 512         ; 0            ; 0       ; 0         ; 8    ; 0            ; |project1                                                                                                                                                                                                                                                                                                                                            ; project1                          ; work         ;
 ;    |adcReader:adc|                                                                                                                      ; 47 (47)             ; 49 (49)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|adcReader:adc                                                                                                                                                                                                                                                                                                                              ; adcReader                         ; work         ;
-;    |clockDivider500KHz:clockDivideFPGA|                                                                                                 ; 75 (75)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|clockDivider500KHz:clockDivideFPGA                                                                                                                                                                                                                                                                                                         ; clockDivider500KHz                ; work         ;
-;    |eepromWrite:eeprom|                                                                                                                 ; 152 (152)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|eepromWrite:eeprom                                                                                                                                                                                                                                                                                                                         ; eepromWrite                       ; work         ;
+;    |clockDivider500KHz:clockDivideFPGA|                                                                                                 ; 74 (74)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|clockDivider500KHz:clockDivideFPGA                                                                                                                                                                                                                                                                                                         ; clockDivider500KHz                ; work         ;
+;    |eepromWrite:eeprom|                                                                                                                 ; 154 (154)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|eepromWrite:eeprom                                                                                                                                                                                                                                                                                                                         ; eepromWrite                       ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 127 (1)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 126 (0)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
 ;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 126 (0)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project1|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
@@ -421,37 +420,12 @@ Encoding Type:  One-Hot
 +------------------------------------------+----------------------------------------+
 ; Register name                            ; Reason for Removal                     ;
 +------------------------------------------+----------------------------------------+
-; adcReader:adc|eepromEn                   ; Stuck at VCC due to stuck port data_in ;
 ; eepromWrite:eeprom|counter[2..31]        ; Stuck at GND due to stuck port data_in ;
 ; eepromWrite:eeprom|bitNum[31]            ; Stuck at GND due to stuck port data_in ;
 ; adcReader:adc|state.stop                 ; Lost fanout                            ;
 ; eepromWrite:eeprom|prevState.acknowledge ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 34   ;                                        ;
+; Total Number of Removed Registers = 33   ;                                        ;
 +------------------------------------------+----------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                          ;
-+------------------------+---------------------------+-----------------------------------------------------------------+
-; Register name          ; Reason for Removal        ; Registers Removed due to This Register                          ;
-+------------------------+---------------------------+-----------------------------------------------------------------+
-; adcReader:adc|eepromEn ; Stuck at VCC              ; eepromWrite:eeprom|counter[2], eepromWrite:eeprom|counter[3],   ;
-;                        ; due to stuck port data_in ; eepromWrite:eeprom|counter[4], eepromWrite:eeprom|counter[5],   ;
-;                        ;                           ; eepromWrite:eeprom|counter[6], eepromWrite:eeprom|counter[7],   ;
-;                        ;                           ; eepromWrite:eeprom|counter[8], eepromWrite:eeprom|counter[9],   ;
-;                        ;                           ; eepromWrite:eeprom|counter[10], eepromWrite:eeprom|counter[11], ;
-;                        ;                           ; eepromWrite:eeprom|counter[12], eepromWrite:eeprom|counter[13], ;
-;                        ;                           ; eepromWrite:eeprom|counter[14], eepromWrite:eeprom|counter[15], ;
-;                        ;                           ; eepromWrite:eeprom|counter[16], eepromWrite:eeprom|counter[17], ;
-;                        ;                           ; eepromWrite:eeprom|counter[18], eepromWrite:eeprom|counter[19], ;
-;                        ;                           ; eepromWrite:eeprom|counter[20], eepromWrite:eeprom|counter[21], ;
-;                        ;                           ; eepromWrite:eeprom|counter[22], eepromWrite:eeprom|counter[23], ;
-;                        ;                           ; eepromWrite:eeprom|counter[24], eepromWrite:eeprom|counter[25], ;
-;                        ;                           ; eepromWrite:eeprom|counter[26], eepromWrite:eeprom|counter[27], ;
-;                        ;                           ; eepromWrite:eeprom|counter[28], eepromWrite:eeprom|counter[29], ;
-;                        ;                           ; eepromWrite:eeprom|counter[30], eepromWrite:eeprom|counter[31], ;
-;                        ;                           ; eepromWrite:eeprom|bitNum[31]                                   ;
-+------------------------+---------------------------+-----------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -475,10 +449,10 @@ Encoding Type:  One-Hot
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; adcReader:adc|adcOut                                                                                                                                                                                                                                                                                                            ; 2       ;
-; eepromWrite:eeprom|dataOut                                                                                                                                                                                                                                                                                                      ; 4       ;
+; eepromWrite:eeprom|sda                                                                                                                                                                                                                                                                                                          ; 3       ;
 ; clockDivider500KHz:clockDivideFPGA|counter[31]                                                                                                                                                                                                                                                                                  ; 34      ;
-; eepromWrite:eeprom|bitNum[2]                                                                                                                                                                                                                                                                                                    ; 2       ;
 ; eepromWrite:eeprom|bitNum[0]                                                                                                                                                                                                                                                                                                    ; 2       ;
+; eepromWrite:eeprom|bitNum[2]                                                                                                                                                                                                                                                                                                    ; 2       ;
 ; eepromWrite:eeprom|bitNum[1]                                                                                                                                                                                                                                                                                                    ; 1       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
@@ -499,10 +473,11 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |project1|eepromWrite:eeprom|bitNum[9]  ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |project1|eepromWrite:eeprom|bitNum[15] ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |project1|eepromWrite:eeprom|bitNum[2]  ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |project1|eepromWrite:eeprom|Selector78 ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; No         ; |project1|eepromWrite:eeprom|Selector71 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |project1|eepromWrite:eeprom|Selector60 ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |project1|eepromWrite:eeprom|Selector71 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |project1|eepromWrite:eeprom|Selector69 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
@@ -599,19 +574,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_ff         ; 162                         ;
 ;     ENA               ; 96                          ;
 ;     plain             ; 66                          ;
-; cycloneiii_lcell_comb ; 276                         ;
+; cycloneiii_lcell_comb ; 277                         ;
 ;     arith             ; 123                         ;
 ;         2 data inputs ; 122                         ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 153                         ;
+;     normal            ; 154                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 9                           ;
+;         1 data inputs ; 8                           ;
 ;         2 data inputs ; 37                          ;
 ;         3 data inputs ; 42                          ;
-;         4 data inputs ; 64                          ;
+;         4 data inputs ; 66                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.10                        ;
-; Average LUT depth     ; 4.41                        ;
+; Max LUT depth         ; 8.50                        ;
+; Average LUT depth     ; 4.61                        ;
 +-----------------------+-----------------------------+
 
 
@@ -624,53 +599,53 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                       ;
-+---------------------------------------------+---------------+-----------+--------------------------------+-------------------+---------------------------------------------+---------+
-; Name                                        ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                           ; Details ;
-+---------------------------------------------+---------------+-----------+--------------------------------+-------------------+---------------------------------------------+---------+
-; rst                                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; rst                                         ; N/A     ;
-; rst                                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; rst                                         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A     ;
-; clk                                         ; post-fitting  ; connected ; Top                            ; post-synthesis    ; clk                                         ; N/A     ;
-; clockDivider500KHz:clockDivideFPGA|CLK_50HZ ; post-fitting  ; connected ; Top                            ; post-synthesis    ; clockDivider500KHz:clockDivideFPGA|CLK_50HZ ; N/A     ;
-; clockDivider500KHz:clockDivideFPGA|CLK_50HZ ; post-fitting  ; connected ; Top                            ; post-synthesis    ; clockDivider500KHz:clockDivideFPGA|CLK_50HZ ; N/A     ;
-; eepromWrite:eeprom|dataOut                  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; eepromWrite:eeprom|dataOut                  ; N/A     ;
-; eepromWrite:eeprom|dataOut                  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; eepromWrite:eeprom|dataOut                  ; N/A     ;
-; eepromWrite:eeprom|scl                      ; post-fitting  ; connected ; Top                            ; post-synthesis    ; eepromWrite:eeprom|scl                      ; N/A     ;
-; eepromWrite:eeprom|scl                      ; post-fitting  ; connected ; Top                            ; post-synthesis    ; eepromWrite:eeprom|scl                      ; N/A     ;
-+---------------------------------------------+---------------+-----------+--------------------------------+-------------------+---------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                                        ;
++---------------------------------------------+---------------+-----------+--------------------------------+-------------------+---------------------------------------------+------------------------------------------------------------------------------------------+
+; Name                                        ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                           ; Details                                                                                  ;
++---------------------------------------------+---------------+-----------+--------------------------------+-------------------+---------------------------------------------+------------------------------------------------------------------------------------------+
+; rst                                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; rst                                         ; N/A                                                                                      ;
+; rst                                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; rst                                         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                        ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC         ; N/A                                                                                      ;
+; clk                                         ; post-fitting  ; connected ; Top                            ; post-synthesis    ; clk                                         ; N/A                                                                                      ;
+; clockDivider500KHz:clockDivideFPGA|CLK_50HZ ; post-fitting  ; connected ; Top                            ; post-synthesis    ; clockDivider500KHz:clockDivideFPGA|CLK_50HZ ; N/A                                                                                      ;
+; clockDivider500KHz:clockDivideFPGA|CLK_50HZ ; post-fitting  ; connected ; Top                            ; post-synthesis    ; clockDivider500KHz:clockDivideFPGA|CLK_50HZ ; N/A                                                                                      ;
+; eepromWrite:eeprom|dataOut                  ; post-fitting  ; missing   ; Top                            ; post-synthesis    ; GND                                         ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; eepromWrite:eeprom|dataOut                  ; post-fitting  ; missing   ; Top                            ; post-synthesis    ; GND                                         ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; eepromWrite:eeprom|scl                      ; post-fitting  ; connected ; Top                            ; post-synthesis    ; eepromWrite:eeprom|scl                      ; N/A                                                                                      ;
+; eepromWrite:eeprom|scl                      ; post-fitting  ; connected ; Top                            ; post-synthesis    ; eepromWrite:eeprom|scl                      ; N/A                                                                                      ;
++---------------------------------------------+---------------+-----------+--------------------------------+-------------------+---------------------------------------------+------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -679,29 +654,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Thu Mar 12 15:54:18 2020
+    Info: Processing started: Thu Mar 12 16:38:01 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project1 -c project1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Warning (12019): Can't analyze file -- file reg32by32.vhd is missing
-Info (12021): Found 2 design units, including 1 entities, in source file project1.vhd
-    Info (12022): Found design unit 1: project1-behavior File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 17
-    Info (12023): Found entity 1: project1 File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file clockdivider.vhd
-    Info (12022): Found design unit 1: clockDivider500KHz-Behavior File: C:/Users/idn09/Documents/ECE 387/Project 1/clockDivider.vhd Line: 11
-    Info (12023): Found entity 1: clockDivider500KHz File: C:/Users/idn09/Documents/ECE 387/Project 1/clockDivider.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file adcreader.vhd
-    Info (12022): Found design unit 1: adcReader-RTL File: C:/Users/idn09/Documents/ECE 387/Project 1/adcReader.vhd Line: 18
-    Info (12023): Found entity 1: adcReader File: C:/Users/idn09/Documents/ECE 387/Project 1/adcReader.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file eepromwrite.vhd
-    Info (12022): Found design unit 1: eepromWrite-RTL File: C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd Line: 16
-    Info (12023): Found entity 1: eepromWrite File: C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file reg8by64.vhd
     Info (12022): Found design unit 1: reg8by64-behavior File: C:/Users/idn09/Documents/ECE 387/Project 1/reg8by64.vhd Line: 15
     Info (12023): Found entity 1: reg8by64 File: C:/Users/idn09/Documents/ECE 387/Project 1/reg8by64.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file project1.vhd
+    Info (12022): Found design unit 1: project1-behavior File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 17
+    Info (12023): Found entity 1: project1 File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file eepromwrite.vhd
+    Info (12022): Found design unit 1: eepromWrite-RTL File: C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd Line: 16
+    Info (12023): Found entity 1: eepromWrite File: C:/Users/idn09/Documents/ECE 387/Project 1/eepromWrite.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file clockdivider.vhd
+    Info (12022): Found design unit 1: clockDivider500KHz-Behavior File: C:/Users/idn09/Documents/ECE 387/Project 1/clockDivider.vhd Line: 11
+    Info (12023): Found entity 1: clockDivider500KHz File: C:/Users/idn09/Documents/ECE 387/Project 1/clockDivider.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file clockdivide4.vhd
     Info (12022): Found design unit 1: clockDivide4-Behavior File: C:/Users/idn09/Documents/ECE 387/Project 1/clockDivide4.vhd Line: 11
     Info (12023): Found entity 1: clockDivide4 File: C:/Users/idn09/Documents/ECE 387/Project 1/clockDivide4.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file adcreader.vhd
+    Info (12022): Found design unit 1: adcReader-RTL File: C:/Users/idn09/Documents/ECE 387/Project 1/adcReader.vhd Line: 18
+    Info (12023): Found entity 1: adcReader File: C:/Users/idn09/Documents/ECE 387/Project 1/adcReader.vhd Line: 6
 Info (12127): Elaborating entity "project1" for the top level hierarchy
 Info (12128): Elaborating entity "clockDivider500KHz" for hierarchy "clockDivider500KHz:clockDivideFPGA" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 73
 Info (12128): Elaborating entity "adcReader" for hierarchy "adcReader:adc" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 85
@@ -727,7 +701,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ngc File: C:/Users/idn09/Documents/ECE 387/Project 1/db/cmpr_ngc.tdf Line: 23
 Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2020.03.12.15:54:31 Progress: Loading sld0c5cb781/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2020.03.12.16:38:15 Progress: Loading sld0c5cb781/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -752,20 +726,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/ip/s
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/idn09/Documents/ECE 387/Project 1/db/ip/sld0c5cb781/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
-Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 41 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
+Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 39 of its 41 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 2 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "adcIn" File: C:/Users/idn09/Documents/ECE 387/Project 1/project1.vhd Line: 8
-Info (21057): Implemented 924 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 928 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 907 logic cells
+    Info (21061): Implemented 911 logic cells
     Info (21064): Implemented 4 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4862 megabytes
-    Info: Processing ended: Thu Mar 12 15:54:41 2020
+    Info: Peak virtual memory: 4868 megabytes
+    Info: Processing ended: Thu Mar 12 16:38:24 2020
     Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:42
+    Info: Total CPU time (on all processors): 00:00:40
 
 
