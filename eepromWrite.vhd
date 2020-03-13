@@ -5,25 +5,30 @@ use ieee.numeric_std.all;
 entity eepromWrite is
 	port(
 		clk     : in  std_logic;
-		en      : in  std_logic;
+		--en      : in  std_logic;
 		dataOut : out std_logic;
-		dataIn  : in  std_logic_vector(7 downto 0);
-		scl     : out std_logic;
-		addr    : out integer
+		--dataIn  : in  std_logic_vector(7 downto 0);
+		scl     : out std_logic
+		--rst     : in  std_logic
+		--addr    : out integer
 	);
 end entity eepromWrite;
 
 architecture RTL of eepromWrite is
-	type state_type is (start, control, acknowledge, addressHigh, addressLow, data, stop);
-	signal byteNum : integer   := 0;
-	signal counter : integer   := 0;
-	signal sda     : std_logic := '1';
+	signal byteNum : integer                      := 0;
+	signal counter : integer                      := 0;
+	signal sda     : std_logic                    := '1';
+	signal state   : std_logic_vector(2 downto 0) := "000";
+	signal tmp     : std_logic                    := '0';
+	signal count   : integer                      := 0;
+	signal fpgaClk : std_logic;
 	--signal enEEPROM : std_logic := '0';
 begin
 
-	process(clk, en) is
-		variable state           : state_type                   := start;
-		variable prevState       : state_type                   := start;
+	
+
+	process(fpgaClk) is
+		variable prevState       : std_logic_vector(2 downto 0) := "000";
 		variable bitNum          : integer                      := 7;
 		constant controlByte     : std_logic_vector(7 downto 0) := "10100000";
 		constant addressHighByte : std_logic_vector(7 downto 0) := x"00";
@@ -41,17 +46,32 @@ begin
 					scl     <= '1';
 					counter <= counter + 1;
 					case state is
-						when start =>
+						when "000" =>
 							sda       <= '0';
-							prevState := start;
-							state     := control;
-						when stop =>    -- @suppress "Dead state "stop": state does not have outgoing transitions"
+							prevState := "000";
+							state     <= "001";
+						when "110" =>   -- @suppress "Dead state "stop": state does not have outgoing transitions"
 							sda       <= '1';
-							state     := stop;
-							prevState := stop;
+							state     <= "110";
+							prevState := "110";
 
+						when "001" =>
+							state <= "001";
+							sda   <= sda;
+						when "010" =>
+							state <= "010";
+							sda   <= sda;
+						when "011" =>
+							state <= "011";
+							sda   <= sda;
+						when "100" =>
+							state <= "100";
+							sda   <= sda;
+						when "101" =>
+							state <= "101";
+							sda   <= sda;
 						when others =>
-							state := state;
+							state <= "000";
 							sda   <= sda;
 					end case;
 				when 2 =>
@@ -62,69 +82,75 @@ begin
 					scl     <= '0';
 					counter <= 0;
 					case state is
-						when control =>
+						when "001" =>
 							sda <= controlByte(bitNum); -- this
 							if (bitNum - 1) >= 0 then
 								bitNum := bitNum - 1;
 							else
-								prevState := control;
-								state     := acknowledge;
+								prevState := "001";
+								state     <= "010";
 								bitNum    := 7;
 							end if;
-						when addressHigh =>
+						when "011" =>
 							sda <= addressHighByte(bitNum);
 							if (bitNum - 1) >= 0 then
 								bitNum := bitNum - 1;
 							else
-								prevState := addressHigh;
-								state     := acknowledge;
+								prevState := "011";
+								state     <= "010";
 								bitNum    := 7;
 							end if;
-						when addressLow =>
+						when "100" =>
 							sda <= addressLowByte(bitNum);
 							if (bitNum - 1) >= 0 then
 								bitNum := bitNum - 1;
 							else
-								prevState := addressLow;
-								state     := acknowledge;
+								prevState := "100";
+								state     <= "010";
 								bitNum    := 7;
 							end if;
-						when data =>
+						when "101" =>
 							sda <= dataByteTest(bitNum);
 							if (bitNum - 1) >= 0 then
 								bitNum := bitNum - 1;
 							else
-								prevState := data;
-								state     := acknowledge;
+								prevState := "101";
+								state     <= "010";
 								bitNum    := 7;
 							end if;
-						when acknowledge =>
+						when "010" =>
 							sda <= '0';
 							case prevState is
-								when control =>
-									state := addressHigh;
-								when addressHigh =>
-									state := addressLow;
-								when addressLow =>
-									state := data;
-								when data =>
+								when "001" =>
+									state <= "011";
+								when "011" =>
+									state <= "100";
+								when "100" =>
+									state <= "101";
+								when "101" =>
 									if (byteNum + 1) <= 63 then
-										state   := data;
+										state   <= "101";
 										byteNum <= byteNum + 1;
 									else
-										state := stop;
+										state <= "110";
 									end if;
-								when others => state := state;
+								when others => state <= state;
 							end case;
+						when "000" =>
+							state <= "000";
+							sda   <= sda;
+						when "110" =>
+							state <= "000";
+							sda   <= sda;
 						when others =>
-							state := state;
+							state <= "000";
 							sda   <= sda;
 					end case;
-				when others => state := state; -- @suppress "Dead state "stop": state does not have outgoing transitions"
+				when others => state <= state; -- @suppress "Dead state "stop": state does not have outgoing transitions"
 			end case;
 		end if;
 	end process;
-	addr    <= byteNum;
+	--addr    <= byteNum;
 	dataOut <= sda;
 
 end architecture RTL;
